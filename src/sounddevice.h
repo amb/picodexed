@@ -14,20 +14,19 @@
 //
 typedef void (*buffer_callback)(int16_t *pBuffer, size_t BufferSize);
 
-class CSoundDevice
-{
-public:
-    CSoundDevice (void);
-    ~CSoundDevice (void);
+class CSoundDevice {
+   public:
+    CSoundDevice(void);
+    ~CSoundDevice(void);
 
-    bool Init (uint32_t sample_rate);
-    bool Update (buffer_callback cb);
+    bool Init(uint32_t sample_rate);
+    bool Update(buffer_callback cb);
 
-private:
-    bool InitI2S (audio_format_t *pAudioFormat, audio_buffer_pool *pBufferPool);
-    bool InitPWM (audio_format_t *pAudioFormat, audio_buffer_pool *pBufferPool);
+   private:
+    bool InitI2S(audio_format_t *pAudioFormat, audio_buffer_pool *pBufferPool);
+    bool InitPWM(audio_format_t *pAudioFormat, audio_buffer_pool *pBufferPool);
 
-private:
+   private:
     struct audio_buffer_pool *pAudioPool;
 };
 
