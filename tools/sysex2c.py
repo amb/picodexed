@@ -88,7 +88,7 @@ print(
 """
 )
 
-print("// Last 10 bytes are the patch name")
+print("// Last 10 bytes for each patch is the patch name in ASCII\n")
 
 if decode == True:
     print("uint8_t progmem_bank[%d][32][156] PROGMEM =\n{" % int(len(sys.argv)))
